@@ -1,0 +1,59 @@
+GET http://localhost:3100/admin/
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJuYW1hIjoiSmlkYW4iLCJlbWFpbCI6IkppZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczOTAzMTc5OCwiZXhwIjoxNzM5MTE4MTk4fQ.3Z-6XgfutliXYXovip8J_eWuHuc3IaXJkf0iOUt6JZA
+
+###
+GET http://localhost:3100/admin/find/2
+Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbklkIjoxLCJuYW1hIjoiSmlkYW4iLCJlbWFpbCI6IkppZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczOTAzMTc5OCwiZXhwIjoxNzM5MTE4MTk4fQ.3Z-6XgfutliXYXovip8J_eWuHuc3IaXJkf0iOUt6JZA
+
+###
+POST http://localhost:3100/admin/register
+Content-Type: application/json
+
+ {
+"nama":"Jidan",
+"email": "Jidan@gmail.com",
+"password": "kominfo223"
+ }
+
+###
+POST http://localhost:3100/admin/login
+Content-Type: application/json
+
+ {
+"email": "Jidan@gmail.com",
+"password": "kominfo223"
+ }
+
+###
+DELETE http://localhost:3100/admin/delete/1
+
+
+
+//! Pembeli
+
+###
+POST http://localhost:3100/cart/create
+Content-Type: application/json
+
+{
+   "total_harga":20000,
+   "jumlah_barang":3,
+   "MenuId":6
+}
+###
+PUT http://localhost:3100/transaksi/update/1
+Content-Type: application/json
+
+{
+   "tanggal_pembelian":"2024-10-1",
+   "total_harga":1000,
+   "status":true,
+   "PembeliId":2,
+   "CartId":2
+}
+
+###
+GET http://localhost:3100/transaksi/
+
+###
+DELETE http://localhost:3100/transaksi/delete/1
